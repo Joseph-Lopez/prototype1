@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>Collecting Recipes</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Icons: https://material.io/tools/icons/
+  also, check out Font Awesome or Glyphicons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+  <body>
+
+  <header class="bg-dark mb-5">
+    <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">
+                <h1 class="text-danger">Red Seal</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+            aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <!--  everything inside of collapse will have a show/hide triggered by toggler -->
+            <div class="collapse navbar-collapse justify-content-end" id="main-menu" aria-labelledby="Toggle navigation">
+                <ul class="navbar-nav">
+                    <li class="nav-item text-white"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item text-white"><a href="#" class="nav-link">Create New Recipe</a></li>
+                    <li class="nav-item text-white"><a href="#" class="nav-link">Login</a></li>
+                </ul>
+                <div role="separator" class="dropdown-divider"></div>
+                <form action="#" class="form-inline">
+                    <input type="text" class="form-control" placeholder="Search For?">
+                    <button class="btn btn-outline-success my-2 my-sm-0 ml-2" href="#" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+  </header>
+
+    <main role="main" class="container">
+      <h2>Create A New Recipe</h2>
+      <p class="font-italic font">Please complete the form entirely and click submit when you are finished</br>
+        Or Email your recipe to <a href="mailto:redseal@example.com">Anthony Oliver</a></p>
+      <div class="bg-danger text-center container border border-dark rounded p-1 m-1">
+        <h5 class="text-white">*NOTICE* </h5>
+        <p>IF you have a picture of the recipe, please feel free to skip to the <span class="font-weight-bold">"Picture of Recipe"</span> field and submmit them there! </p>
+      </div>
+      <form id="myform" name="myform" method="post" action="submit.html" class="mt-5">
+          <div class="form-row">
+            <h4>Recipe By:</h4>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last name">
+            </div>
+          </div>
+					<div class="form-group">
+						<label class="font-weight-bold">Recipe Name:</label>
+						<input type="text" class="form-control">
+          </div>
+          
+					<div class="form-group">
+						<label class="font-weight-bold">Description: <a href="#hidden-desc" data-toggle="collapse">
+              Info
+              <div class="card-body" data-toggle="collapse" id="hidden-desc">
+                <p>Please be as decriptive as possible without going over the max length of description (250 words).</p>
+            </div>
+          </a></label>
+						<textarea name="description" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+						<label class="font-weight-bold">Ingredients: <a href="#hidden-ingredients" data-toggle="collapse">
+              Info
+              <div class="card-body" data-toggle="collapse" id="hidden-ingredients">
+                <p>Please add as many Ingredients as needed to create recipe.</p>
+            </div>
+          </a></label>
+						<div class="container1">
+              <button type="button" class="btn btn-warning mb-1 add_form_field">Add Another Ingredient &nbsp; 
+                <span style="font-size:16px; font-weight:bold;">+ </span>
+              </button>
+
+              <div><input type="text" class="form-control" name="mytext[]"><a href="#" class="delete">Delete</a></div>
+              </div>
+              <div role="separator" class="dropdown-divider"></div>
+          </div>
+          <div class="form-group">
+						<label class="font-weight-bold">Instructions:<a href="#hidden-steps" data-toggle="collapse">
+              Info
+              <div class="card-body" data-toggle="collapse" id="hidden-steps">
+                <p>Please add as many steps needed for this recipe and be as descriptive as possible!</p>
+            </div>
+          </a></label>
+						<div class="container2">
+              <button type="button" class="btn btn-warning mb-1 add_form_field_two">Next Step &nbsp; 
+                <span style="font-size:16px; font-weight:bold;">+ </span>
+              </button>
+            
+              <div><input type="text" class="form-control" name="mytext[]"><a href="#" class="delete">Delete</a></div>
+              </div>
+              <div role="separator" class="dropdown-divider"></div>
+          </div>
+          <div class="form-group">
+            <label class="font-weight-bold" for="exampleFormControlSelect1"> How Many Servings Are Made With  This Recipe?</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-inline">
+            <div class="input-group mb-2 mr-sm-2">
+              <label class="font-weight-bold">Prep Time: </label>
+              <input type="text" class="form-control ml-1" id="inlineFormInputGroupUsername2" placeholder="Ex. 30">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Minutes</div>
+              </div>
+              <p class="text-danger mt-2 ml-2">(How many minutes does it take to prep the ingredients? *In numerical format*)</p>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+              <label class="font-weight-bold">Cook Time: </label>
+              <input type="text" class="form-control ml-1" id="inlineFormInputGroupUsername2" placeholder="Ex. 60">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Minutes</div>
+              </div>
+              <p class="text-danger mt-2 ml-2">(How many minutes does it take to cook the meal? *In numerical format*)</p>
+            </div>
+          </div>
+          <div class="form-group pt-2">
+						<label class="font-weight-bold">Picture of Recipe: <a href="#hidden-picture" data-toggle="collapse">
+              Info
+              <div class="card-body" data-toggle="collapse" id="hidden-picture">
+                <p>Please add a image of the finished recipe, that way we know if we made it wrong! OR Add a picture with the recipe written down on it!</p>
+            </div>
+          </a></label>
+						<input type="file" class="form-control">
+          </div>
+					<div class="form-group mt-5 text-center">
+            <h4 class="text-danger">*WARNING*</h4>
+            <p class="text-danger">Please double check your recipe to make sure nothing is missing and all information given is correct!</p>
+						<label for="submit">&nbsp;</label>
+						<input type="submit" name="submit" class="btn btn-info" value="Submit" href="submit.html">
+					</div>
+			</form>
+    </main>
+  </body>
+</html>
